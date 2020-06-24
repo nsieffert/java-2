@@ -20,6 +20,16 @@ public class HealthBurger extends Burger {
     }
 
     @Override
+    public void addBurgerSides5(String name, double price) {
+        System.out.println("Healthy burger can only have 6 sides total");
+    }
+
+    @Override
+    public void addBurgerSides6(String name, double price) {
+        System.out.println("Healthy burger can only have 6 sides total");
+    }
+
+    @Override
     public double itemizeBurger() {
         double totalPrice = super.itemizeBurger();
         if(this.healthySide1Name != null) {
