@@ -9,6 +9,7 @@ public class DeluxeBurger extends Burger {
         super.addBurgerSides5("Chips", 1);
         super.addBurgerSides6("Drink", 1);
         this.meatType = meatType;
+        this.breadType = breadType;
 
 
     }
