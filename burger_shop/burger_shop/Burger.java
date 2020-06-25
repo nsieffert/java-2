@@ -3,23 +3,22 @@ package burger_shop;
 public class Burger {
     private String name;
     private double price;
-   // private String bun;
-    private String sides1Name;
-    private double sides1Price;
-    private String sides2Name;
-    private double sides2Price;
-    private String sides3Name;
-    private double sides3Price;
-    private String sides4Name;
-    private double sides4Price;
-    private String sides5Name;
-    private double sides5Price;
-    private String sides6Name;
-    private double sides6Price;
+    private String toppings1Name;
+    private double toppings1Price;
+    private String toppings2Name;
+    private double toppings2Price;
+    private String toppings3Name;
+    private double toppings3Price;
+    private String toppings4Name;
+    private double toppings4Price;
+    private String toppings5Name;
+    private double toppings5Price;
+    private String toppings6Name;
+    private double toppings6Price;
     private Meat meatType;
     private Bread breadType;
 
-    public Burger(String name, double price, Bread breadType, Meat meatType) {
+    public Burger(Bread breadType, Meat meatType) {
         this.name = name;
         this.price = price;
         this.breadType = breadType;
@@ -29,69 +28,66 @@ public class Burger {
     public Meat getMeatType() {
         return meatType;
     }
-
     public Bread getBreadType() {
         return breadType;
     }
 
-    @Override
-    public String toString() {
-        return super.toString();
+    public void addBurgerToppings1(String name, double price){
+        this.toppings1Name = name;
+        this.toppings1Price = price;
     }
 
-    public void addBurgerSides1(String name, double price){
-        this.sides1Name = name;
-        this.sides1Price = price;
+    public void addBurgerToppings2(String name, double price){
+        this.toppings2Name = name;
+        this.toppings2Price = price;
     }
 
-    public void addBurgerSides2(String name, double price){
-        this.sides2Name = name;
-        this.sides2Price = price;
+    public void addBurgerToppings3(String name, double price){
+        this.toppings3Name = name;
+        this.toppings3Price = price;
     }
 
-    public void addBurgerSides3(String name, double price){
-        this.sides3Name = name;
-        this.sides3Price = price;
+    public void addBurgerToppings4(String name, double price){
+        this.toppings4Name = name;
+        this.toppings4Price = price;
     }
 
-    public void addBurgerSides4(String name, double price){
-        this.sides4Name = name;
-        this.sides4Price = price;
+    public void addBurgerToppings5(String name, double price){
+        this.toppings5Name = name;
+        this.toppings5Price = price;
     }
 
-    public void addBurgerSides5(String name, double price){
-        this.sides5Name = name;
-        this.sides5Price = price;
-    }
-
-    public void addBurgerSides6(String name, double price){
-        this.sides6Name = name;
-        this.sides6Price = price;
+    public void addBurgerToppings6(String name, double price){
+        this.toppings6Name = name;
+        this.toppings6Price = price;
     }
 
     public double itemizeBurger() {
         double totalPrice = 0;
         System.out.println(this.name + "burger using " + meatType + " on a " + breadType + " bun: the price is " + this.price);
-        if(this.sides1Name != null) {
-            System.out.println("Customer added " + this.sides1Name + " for an extra " + this.sides1Price);
+        if(this.toppings1Name != null) {
+            System.out.println("Customer added " + this.toppings1Name + " for an extra " + this.toppings1Price);
     }
-        if(this.sides2Name != null) {
-            System.out.println("Customer added " + this.sides2Name + " for an extra " + this.sides2Price);
+        if(this.toppings2Name != null) {
+            System.out.println("Customer added " + this.toppings2Name + " for an extra " + this.toppings2Price);
         }
-        if(this.sides3Name != null) {
-            System.out.println("Customer added " + this.sides3Name + " for an extra " + this.sides3Price);
+        if(this.toppings3Name != null) {
+            System.out.println("Customer added " + this.toppings3Name + " for an extra " + this.toppings3Price);
         }
-        if(this.sides4Name != null) {
-            System.out.println("Customer added " + this.sides4Name + " for an extra " + this.sides4Price);
+        if(this.toppings4Name != null) {
+            System.out.println("Customer added " + this.toppings4Name + " for an extra " + this.toppings4Price);
         }
-        if(this.sides5Name != null) {
-            System.out.println("Customer added " + this.sides5Name + " for an extra " + this.sides5Price);
+        if(this.toppings5Name != null) {
+            System.out.println("Customer added " + this.toppings5Name + " for an extra " + this.toppings5Price);
         }
-        if(this.sides6Name != null) {
-            System.out.println("Customer added " + this.sides6Name + " for an extra " + this.sides6Price);
+        if(this.toppings6Name != null) {
+            System.out.println("Customer added " + this.toppings6Name + " for an extra " + this.toppings6Price);
         }
 
-        totalPrice = this.price + this.sides1Price + this.sides2Price + this.sides3Price + this.sides4Price + this.sides5Price + this.sides6Price ;
+
+        totalPrice = this.price + this.toppings1Price + this.toppings2Price + this.toppings3Price +
+                this.toppings4Price + this.toppings5Price + this.toppings6Price;
+
         System.out.println("Your total is " + totalPrice);
         return totalPrice;
 
