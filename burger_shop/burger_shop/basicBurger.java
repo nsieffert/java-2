@@ -5,11 +5,22 @@ public class basicBurger extends Burger {
     private double basicSide1Price;
     private String basicSide2Name;
     private double basicSide2Price;
+    private Meat meatType;
+    private Bread breadType;
 
-    public basicBurger(String name, String meat, double price, String bun) {
-        super("Basic", meat, price, bun);
+    public basicBurger(String name, double price, Bread breadType, Meat meatType) {
+        super(name, price, breadType, meatType);
+        this.meatType = meatType;
+        this.breadType = breadType;
     }
 
+    public Meat getMeatType() {
+        return meatType;
+    }
+
+    public Bread getBreadType() {
+        return breadType;
+    }
 
     public void addBasicSide1(String name, double price) {
         this.basicSide1Name = name;
@@ -22,23 +33,32 @@ public class basicBurger extends Burger {
     }
 
     @Override
+    public void addBurgerSides1(String name, double price) {
+        System.out.println("the basic burger only comes with two sides total");
+    }
+
+    @Override
+    public void addBurgerSides2(String name, double price) {
+        System.out.println("the basic burger only comes with two sides total");
+    }
+    @Override
     public void addBurgerSides3(String name, double price) {
-        System.out.println("the basic burger only comes with four sides total");
+        System.out.println("the basic burger only comes with two sides total");
     }
 
     @Override
     public void addBurgerSides4(String name, double price) {
-        System.out.println("the basic burger only comes with four sides total");
+        System.out.println("the basic burger only comes with two sides total");
     }
 
     @Override
     public void addBurgerSides5(String name, double price) {
-        System.out.println("the basic burger only comes with four sides total");
+        System.out.println("the basic burger only comes with two sides total");
     }
 
     @Override
     public void addBurgerSides6(String name, double price) {
-        System.out.println("the basic burger only comes with four sides total");
+        System.out.println("the basic burger only comes with two sides total");
     }
 
     @Override

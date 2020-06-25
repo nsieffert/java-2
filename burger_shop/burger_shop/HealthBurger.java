@@ -5,11 +5,24 @@ public class HealthBurger extends Burger {
     private double healthySide1Price;
     private String healthySide2Name;
     private double healthySide2Price;
+    private Meat meatType;
+    private Bread breadType;
 
-    public HealthBurger(String meat, double price) {
-        super("Healthy", meat, price, "Wheat");
 
+    public HealthBurger(String name, double price, Bread breadType, Meat meatType) {
+        super(name, price, breadType, meatType);
+        this.meatType = meatType;
+        this.breadType = breadType;
     }
+
+    public Meat getMeatType() {
+        return meatType;
+    }
+
+    public Bread getBreadType() {
+        return breadType;
+    }
+
     public void addHealthySide1(String name, double price){
         this.healthySide1Name = name;
         this.healthySide1Price = price;
@@ -20,13 +33,22 @@ public class HealthBurger extends Burger {
     }
 
     @Override
+    public void addBurgerSides3(String name, double price) {
+        System.out.println("Healthy burger can only have four sides total");
+    }
+
+    @Override
+    public void addBurgerSides4(String name, double price) {
+        System.out.println("Healthy burger can only have four sides total");
+    }
+    @Override
     public void addBurgerSides5(String name, double price) {
-        System.out.println("Healthy burger can only have 6 sides total");
+        System.out.println("Healthy burger can only have four sides total");
     }
 
     @Override
     public void addBurgerSides6(String name, double price) {
-        System.out.println("Healthy burger can only have 6 sides total");
+        System.out.println("Healthy burger can only have four sides total");
     }
 
     @Override

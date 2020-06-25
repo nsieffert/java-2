@@ -1,11 +1,25 @@
 package burger_shop;
 
 public class DeluxeBurger extends Burger {
-    public DeluxeBurger() {
-        super("Deluxe", "Double Beef with Bacon", 6.50, "Sesame Seed");
+    private Meat meatType;
+    private Bread breadType;
+
+    public DeluxeBurger(Bread breadType, Meat meatType) {
+        super("Deluxe", 6.55, breadType, meatType);
         super.addBurgerSides5("Chips", 1);
         super.addBurgerSides6("Drink", 1);
+        this.meatType = meatType;
+
+
     }
+    public Meat getMeatType() {
+        return meatType;
+    }
+
+    public Bread getBreadType() {
+        return breadType;
+    }
+
     @Override
     public void addBurgerSides1(String name, double price) {
         System.out.println("the Deluxe burger only comes with chips and a drink");

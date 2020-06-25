@@ -2,9 +2,8 @@ package burger_shop;
 
 public class Burger {
     private String name;
-    private String meat;
     private double price;
-    private String bun;
+   // private String bun;
     private String sides1Name;
     private double sides1Price;
     private String sides2Name;
@@ -17,13 +16,29 @@ public class Burger {
     private double sides5Price;
     private String sides6Name;
     private double sides6Price;
+    private Meat meatType;
+    private Bread breadType;
 
-    public Burger(String name, String meat, double price, String bun) {
+    public Burger(String name, double price, Bread breadType, Meat meatType) {
         this.name = name;
-        this.meat = meat;
         this.price = price;
-        this.bun = bun;
+        this.breadType = breadType;
+        this.meatType = meatType;
     }
+
+    public Meat getMeatType() {
+        return meatType;
+    }
+
+    public Bread getBreadType() {
+        return breadType;
+    }
+
+    @Override
+    public String toString() {
+        return super.toString();
+    }
+
     public void addBurgerSides1(String name, double price){
         this.sides1Name = name;
         this.sides1Price = price;
@@ -56,7 +71,7 @@ public class Burger {
 
     public double itemizeBurger() {
         double totalPrice = 0;
-        System.out.println(this.name + "burger using " + this.meat + " on a " + this.bun + " bun: the price is " + this.price);
+        System.out.println(this.name + "burger using " + meatType + " on a " + breadType + " bun: the price is " + this.price);
         if(this.sides1Name != null) {
             System.out.println("Customer added " + this.sides1Name + " for an extra " + this.sides1Price);
     }
