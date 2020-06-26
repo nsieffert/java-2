@@ -15,34 +15,28 @@ public class Order {
     private double orderToppings3Price;
     private String orderToppings4Name;
     private double orderToppings4Price;
-    private Meat meatType;
-    private Bread breadType;
     private Meal meal;
     private Drinks drinkType;
     private Side sidesType;
 
-    public Order(Bread breadType, Meat meatType, Burger basicBurger, Burger healthBurger, Burger deluxeBurger) {
+//    public Order(Bread breadType, Meat meatType, Burger basicBurger, Burger healthBurger, Burger deluxeBurger) {
+//        this.meatType = meatType;
+//        this.breadType = breadType;
+//        BasicBurger = basicBurger;
+//        HealthBurger = healthBurger;
+//        DeluxeBurger = deluxeBurger;
+//
+//    }
+
+
+    public Order(Burger basicBurger, Drinks drinkType, Side sidesType) {
         BasicBurger = basicBurger;
-        HealthBurger = healthBurger;
-        DeluxeBurger = deluxeBurger;
-        this.meatType = meatType;
-        this.breadType = breadType;
-    }
-    public Order(Meal meal) {
-            this.meal = meal;
-        }
-       public Meal getMeal() {
-        return meal;
+        this.drinkType = drinkType;
+        this.sidesType = sidesType;
     }
 
     public Drinks getDrinkType(String name) {
         return drinkType;
-    }
-    public Meat getMeatType() {
-        return meatType;
-    }
-    public Bread getBreadType(Bread bread) {
-        return breadType;
     }
 
     public Side getSidesType(String name) {
@@ -90,7 +84,7 @@ public class Order {
 
     public double itemizeBasicBurgerOrder() {
         double totalBasicBurgerPrice = 0;
-        System.out.println("Customer has selected the " + addBurger("basic Burger") + " with " + meatType + " and " + breadType + " for " + this.basicBurgerPrice);
+        System.out.println("Customer has selected the " + addBurger("basic Burger") + " for " + this.basicBurgerPrice);
         if(this.orderToppings1Name != null) {
             System.out.println("Customer added " + this.orderToppings1Name + " for an extra " + this.orderToppings1Price);
         }
@@ -118,7 +112,7 @@ public class Order {
 
     public double itemizeHealthBurgerOrder() {
         double totalHealthBurgerPrice = 0;
-        System.out.println("Customer selected the " + addBurger("Healthy Burger") + " with " + meatType + " and " + breadType + " for a cost of " + this.healthBurgerPrice);
+        System.out.println("Customer selected the " + addBurger("Healthy Burger") + " for a cost of " + this.healthBurgerPrice);
         if(this.orderToppings1Name != null) {
             System.out.println("Customer added " + this.orderToppings1Name + " for an extra " + this.orderToppings1Price);
         }
@@ -146,7 +140,7 @@ public class Order {
 
     public double itemizeDeluxeOrder() {
         double totalDeluxePrice = 0;
-        System.out.println("Customer selected the " + addBurger("Deluxe Burger") + " with " + meatType + " and " + breadType + " for a cost of " + this.DeluxeBurgerPrice);
+        System.out.println("Customer selected the " + addBurger("Deluxe Burger") + " for a cost of " + this.DeluxeBurgerPrice);
         if(this.orderToppings1Name != null) {
             System.out.println("Customer added " + this.orderToppings1Name + " for an extra " + this.orderToppings1Price);
         }

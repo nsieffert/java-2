@@ -16,7 +16,7 @@ public class Main {
         Meat meatOrder3 = new Meat("Turkey");
         Side sides = new Side("frenchFries", 1);
         Drinks drink = new Drinks("Squirt", 2);
-        Meal meal = new Meal(sides, drink, meatOrder3, breadOrder3);
+        Meal meal = new Meal(meatOrder2, breadOrder2, sides, drink);
         //++++++++++++++++++++++++++++++
 
         Order order  = new Order(null);

@@ -8,13 +8,14 @@ public class Meal {
     private Meat meatType;
     private Bread breadType;
 
-    public Meal(Side sideTypeName, Drinks drinkTypeName, Meat meatType, Bread breadType) {
+    public Meal(Meat meatType, Bread breadType, Side sideTypeName, Drinks drinkTypeName) {
+        this.meatType = meatType;
+        this.breadType = breadType;
         this.price = 10.99;
         this.basicBurger = getBasicBurger();
         this.sideTypeName = sideTypeName;
         this.drinkTypeName = drinkTypeName;
-        this.meatType = meatType;
-        this.breadType = breadType;
+
     }
 
     @Override
