@@ -1,114 +1,65 @@
 package burger_shop;
+import java.util.ArrayList;
 
-public class HealthBurger extends Burger {
-    private String healthyTopping1Name;
-    private double healthyTopping1Price;
-    private String healthyTopping2Name;
-    private double healthyTopping2Price;
-    private String healthyTopping3Name;
-    private double healthyTopping3Price;
-    private String healthyTopping4Name;
-    private double healthyTopping4Price;
-    private Meat meatType;
-    private Bread breadType;
+public class HealthBurger {
+    private double price;
+
+    private ArrayList<Toppings> toppings;
 
 
-    public HealthBurger(String name, double price, Bread breadType, Meat meatType) {
-        super(breadType, meatType);
-        this.meatType = meatType;
-        this.breadType = breadType;
+    public HealthBurger(double price){
+        this.price = price;
+        this.toppings = new ArrayList<Toppings>();
     }
+    public void addHealthBurger(double price) {
+        System.out.println("Added Healthy Burger for " + this.price);
+        }
 
-    public Meat getMeatType() {
-        return meatType;
-    }
-    public Bread getBreadType() {
-        return breadType;
-    }
-
-    public void addHealthyTopping1(String name, double price) {
-        if (name != "tomato") {
-            System.out.println("May only select tomato");
+    public void addToppings(Toppings topping) {
+        if (this.toppings.size() >= 4) {
+            System.out.println("Customer has reached toppings limit.");
         } else {
-            this.healthyTopping1Name = name;
-            this.healthyTopping1Price = price;
+            if (topping.isHealthy()) {
+                System.out.println("Added " + topping  + " as a topping.");
+                this.toppings.add(topping);
+            } else {
+                System.out.println("Can only select healthy toppings.");
+            }
+
         }
     }
-    public void addHealthyTopping2(String name, double price) {
-        if (name != "lettuce") {
-            System.out.println("May only select lettuce");
-        } else {
-            this.healthyTopping2Name = name;
-            this.healthyTopping2Price = price;
-        }
+    public void addBread(Bread bread) {
+        System.out.println("Added " + bread + " bun.");
     }
-    public void addHealthyTopping3(String name, double price) {
-        if (name != "pickles") {
-            System.out.println("May only select pickles");
-        } else {
-            this.healthyTopping3Name = name;
-            this.healthyTopping3Price = price;
-        }
+    public void addMeat(Meat meat) {
+        System.out.println("Added " + meat + " meat.");
     }
-    public void addHealthyTopping4(String name, double price) {
-        if (name != "onion") {
-            System.out.println("May only select onion");
-        } else {
-            this.healthyTopping4Name = name;
-            this.healthyTopping4Price = price;
-        }
+    public void addDrink(Drink drink) {
+        System.out.println("Added " + drink + " drink.");
     }
-    @Override
-    public void addBurgerToppings1(String name, double price) {
-        System.out.println("Healthy burger can only have four sides total");
+    public void addSide(Side side) {
+        System.out.println("Added " + side + " side.");
     }
 
-    @Override
-    public void addBurgerToppings2(String name, double price) {
-        System.out.println("Healthy burger can only have four sides total");
-    }
-    @Override
-    public void addBurgerToppings3(String name, double price) {
-        System.out.println("Healthy burger can only have four sides total");
-    }
-
-    @Override
-    public void addBurgerToppings4(String name, double price) {
-        System.out.println("Healthy burger can only have four sides total");
-    }
-    @Override
-    public void addBurgerToppings5(String name, double price) {
-        System.out.println("Healthy burger can only have four sides total");
-    }
-
-    @Override
-    public void addBurgerToppings6(String name, double price) {
-        System.out.println("Healthy burger can only have four sides total");
-    }
-
-    @Override
-    public double itemizeBurger() {
-        double totalPrice = super.itemizeBurger();
-        if(this.healthyTopping1Name != null) {
-            System.out.println("Customer added " + this.healthyTopping1Name + " for an extra " + this.healthyTopping1Price);
-            totalPrice = totalPrice + this.healthyTopping1Price;
+    public ArrayList<Toppings> getToppings(){
+        for (int i = 0; i < toppings.size(); i++) {
+            System.out.println("New topping " + toppings.get(i).getTopping());
         }
-
-        if(this.healthyTopping2Name != null) {
-            System.out.println("Customer added " + this.healthyTopping2Name + " for an extra " + this.healthyTopping2Price);
-            totalPrice = totalPrice + this.healthyTopping2Price;
-            System.out.println("Your total for the healthy burger is " + totalPrice);
+        return this.toppings;
+    }
+    public double HealthBurgerPrice(){
+        System.out.println("The healthy Burger is " + this.price);
+        return this.price;
+    }
+    public double totalHealthBurgerPrice() {
+        double healthBurgerPrice  = this.price;
+        for(int i = 0; i < toppings.size(); i++){
+            Toppings checked  = this.toppings.get(i);
+            healthBurgerPrice += checked.getPrice();
         }
-        if(this.healthyTopping3Name != null) {
-            System.out.println("Customer added " + this.healthyTopping3Name + " for an extra " + this.healthyTopping3Price);
-            totalPrice = totalPrice + this.healthyTopping3Price;
-            System.out.println("Your total for the healthy burger is " + totalPrice);
-        }
-        if(this.healthyTopping4Name != null) {
-            System.out.println("Customer added " + this.healthyTopping4Name + " for an extra " + this.healthyTopping4Price);
-            totalPrice = totalPrice + this.healthyTopping4Price;
-            System.out.println("Your total for the healthy burger is " + totalPrice);
-        }
-        return totalPrice;
+        System.out.println("The total for the healthy Burger is " + healthBurgerPrice);
+        return healthBurgerPrice;
     }
 }
+
+

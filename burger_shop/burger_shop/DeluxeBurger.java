@@ -1,53 +1,42 @@
 package burger_shop;
+import java.util.ArrayList;
 
 public class DeluxeBurger extends Burger {
-    private Meat meatType;
-    private Bread breadType;
+    private double price;
 
-    public DeluxeBurger(Bread breadType, Meat meatType) {
-        super(breadType, meatType);
-        super.addBurgerToppings5("Chips", 1);
-        super.addBurgerToppings6("Drink", 1);
-        this.meatType = meatType;
-        this.breadType = breadType;
-
-
-    }
-    public Meat getMeatType() {
-        return meatType;
-    }
-    public Bread getBreadType() {
-        return breadType;
+    public DeluxeBurger(double price, String side, String drink) {
+        super(7.99);
+        this.price = price;
+        System.out.println("Customer has selected the Deluxe Burger for " + this.price);
+        System.out.println("Customer has also added "+ drink +", and " + side +
+                ", which are complimentary with the deluxe burger.");
     }
 
-    @Override
-    public void addBurgerToppings1(String name, double price) {
-        System.out.println("the Deluxe burger only comes with chips and a drink");
+    public void addBread(Bread bread) {
+        System.out.println("Added " + bread + " bread.");
     }
 
-    @Override
-    public void addBurgerToppings2(String name, double price) {
-        System.out.println("the Deluxe burger only comes with chips and a drink");
+    public void addMeat(Meat meat) {
+        System.out.println("Added " + meat + " meat.");
+    }
+
+    public void addToppings(Toppings topping) {
+        super.addToppings(topping);
+    }
+
+    public ArrayList<Toppings> getToppings() {
+        return super.getToppings();
     }
 
     @Override
-    public void addBurgerToppings3(String name, double price) {
-        System.out.println("the Deluxe burger only comes with chips and a drink");
+    public double totalBurgerPrice() {
+        return super.totalBurgerPrice();
     }
 
-    @Override
-    public void addBurgerToppings4(String name, double price) {
-        System.out.println("the Deluxe burger only comes with chips and a drink");
+    public double totalDeluxeBurgerPrice(){
+        System.out.println("The Deluxe Burger is " + this.price);
+        System.out.println("Side and drink are complimentary.");
+        System.out.println("Your total for the Deluxe Burger is " + this.price);
+        return this.price;
     }
-
-    @Override
-    public void addBurgerToppings5(String name, double price) {
-        System.out.println("the Deluxe burger only comes with chips and a drink");
-    }
-
-    @Override
-    public void addBurgerToppings6(String name, double price) {
-        System.out.println("the Deluxe burger only comes with chips and a drink");
-    }
-    }
-
+}
