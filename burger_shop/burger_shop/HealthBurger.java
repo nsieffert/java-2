@@ -10,17 +10,15 @@ public class HealthBurger {
     public HealthBurger(double price){
         this.price = price;
         this.toppings = new ArrayList<Toppings>();
+        System.out.println("Customer has added a healthy Burger for " + this.price);
     }
-    public void addHealthBurger(double price) {
-        System.out.println("Added Healthy Burger for " + this.price);
-        }
 
     public void addToppings(Toppings topping) {
         if (this.toppings.size() >= 4) {
             System.out.println("Customer has reached toppings limit.");
         } else {
             if (topping.isHealthy()) {
-                System.out.println("Added " + topping  + " as a topping.");
+                System.out.println("Added " + topping  + " as a topping for " + topping.getPrice());
                 this.toppings.add(topping);
             } else {
                 System.out.println("Can only select healthy toppings.");
@@ -47,10 +45,7 @@ public class HealthBurger {
         }
         return this.toppings;
     }
-    public double HealthBurgerPrice(){
-        System.out.println("The healthy Burger is " + this.price);
-        return this.price;
-    }
+
     public double totalHealthBurgerPrice() {
         double healthBurgerPrice  = this.price;
         for(int i = 0; i < toppings.size(); i++){

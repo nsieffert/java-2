@@ -4,13 +4,14 @@ import java.util.ArrayList;
 public class BasicBurger extends Burger {
     private double price;
 
+
     private ArrayList<Toppings> toppings;
 
     public BasicBurger(double price) {
         super(price);
         this.price = price;
         this.toppings = new ArrayList<Toppings>();
-        System.out.println("Customer has selected the basic burger for " + this.price);
+        System.out.println("Customer has added a basic Burger for " + this.price);
     }
 
     public void addToppings(Toppings topping) {
@@ -27,10 +28,6 @@ public class BasicBurger extends Burger {
             }
             return this.toppings;
     }
-        public double BasicBurgerPrice(){
-            System.out.println("The Basic Burger is " + this.price);
-            return this.price;
-        }
 
     public void addBread(Bread bread) {
         System.out.println("Added " + bread + " bun.");
