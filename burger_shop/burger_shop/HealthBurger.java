@@ -5,11 +5,12 @@ public class HealthBurger {
     private double price;
 
     private ArrayList<Toppings> toppings;
-
+    private ArrayList<Side> sides;
 
     public HealthBurger(double price){
         this.price = price;
         this.toppings = new ArrayList<Toppings>();
+        this.sides = new ArrayList<Side>();
         System.out.println("Customer has added a healthy Burger for " + this.price);
     }
 
@@ -25,6 +26,22 @@ public class HealthBurger {
             }
 
         }
+
+    }
+
+    public void addSides(Side side) {
+        if (this.sides.size() >= 3) {
+            System.out.println("Customer has reached the sides limit.");
+        } else {
+            System.out.println("Added " + side + " as a side.");
+            this.sides.add(side);
+        }
+    }
+    public ArrayList<Side> getSides() {
+        for (Side side : sides) {
+            System.out.println("New topping " + side.getSide());
+        }
+        return this.sides;
     }
     public void addBread(Bread bread) {
         System.out.println("Added " + bread + " bun.");
@@ -34,9 +51,6 @@ public class HealthBurger {
     }
     public void addDrink(Drink drink) {
         System.out.println("Added " + drink + " drink.");
-    }
-    public void addSide(Side side) {
-        System.out.println("Added " + side + " side.");
     }
 
     public ArrayList<Toppings> getToppings(){
